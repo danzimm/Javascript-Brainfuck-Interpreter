@@ -26,7 +26,7 @@ input:focus {
 }
 
 #input_container {
-	margin:50px auto 50px auto;
+	margin-top:50px;
 }
 
 body {
@@ -35,18 +35,70 @@ body {
 	color:#FFF;
 }
 
-h1 {
+h1:hover {
+	color:#000;
+	width:350px;
 }
 
-#output {
+#console_input_alert {
+	position:absolute;
+	width:300px;
+	height:5em;
+	top:15%;
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
 	border-radius: 15px;
-	background-color:#69ad39;
-	width:100px;
 	border:5px solid #4D8029;
-	margin:50px;
+	background: #69ad39; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, #69ad39 0%, #63ad39 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#69ad39), color-stop(100%,#63ad39)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, #69ad39 0%,#63ad39 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, #69ad39 0%,#63ad39 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, #69ad39 0%,#63ad39 100%); /* IE10+ */
+	background: radial-gradient(center, ellipse cover, #69ad39 0%,#63ad39 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#69ad39', endColorstr='#63ad39',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	display:none;
+}
+
+#console_input_text {
+	padding-top:1.9em;
+}
+
+#console_input_text #hint {
+	position:relative;
+	top:-.5em;
+	font-size:0.2em;
+}
+
+#alert_focus {
+	display:none;
+	position:absolute;
+	top:0px;
+	left:0px;
+	background-color:#000;
+	width:100%;
+	height:100%;
+	opacity:0.5;
+}
+
+#output_container {
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	margin:50px;
+	height:1px;
+	padding:1em;
+	overflow:hidden;
+	width:auto;
+	-webkit-transition: all 300ms ease-in-out;
+	-moz-transition: all 300ms ease-in-out;
+	-o-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out;
+	font-size:2em;
+}
+
+#output {
+	vertical-align:middle;
 }
 
 #process {
@@ -62,4 +114,31 @@ h1 {
 	margin:5px;
 	text-decoration:none;
 	color:#FFF;
+}
+
+#process a:hover {
+	color:#000;
+}
+
+#output:hover {
+	color:#000;
+}
+
+::selection {
+	background: #FFF; /* Safari */
+}
+::-moz-selection {
+	background: #FFF; /* Firefox */
+}
+
+#error_container {
+	color:#9C2E1F;
+	height:1px;
+	margin:25px;
+	font-size:1em;
+	overflow:hidden;
+	-webkit-transition: all 300ms ease-in-out;
+	-moz-transition: all 300ms ease-in-out;
+	-o-transition: all 300ms ease-in-out;
+	transition: all 300ms ease-in-out;
 }

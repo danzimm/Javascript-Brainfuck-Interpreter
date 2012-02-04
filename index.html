@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>Brainfucker</title>
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/main.css">		
 </head>
 <body>
 	<center>
@@ -11,12 +11,25 @@
 			Brainfuck Interpreter
 		</h1>
 		<div id="input_container">
-			<input type="text" name="input" autofocus="autofocus" />
+			<input type="text" name="input" title="Put your brainfuck here" autofocus="autofcous" id="brainfuck_input" />
+		</div>
+		<div id="error_container">
 		</div>
 		<div id="process">
-			<a href="#submit">Submit</a>
+			<a href="#submit" id="submit_button">Submit</a>
 		</div>
-		<div id="output">
+		<div id="output_container">
+			<div id="output">
+			</div>
+		</div>
+		<div id="alert_focus">
+		</div>
+		<div id="console_input_alert">
+			<div id="console_input_text">
+				Input needed<br/>
+				<span id="hint">(Type a character)</span>
+			</div>
 		</div>
 	</center>
+	<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
 </body>
