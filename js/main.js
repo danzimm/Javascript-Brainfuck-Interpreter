@@ -180,8 +180,11 @@
 	
 	document.onkeydown = function( event ) {
 		if (waitingForKey) {
-			event.preventDefault();
-			gotInput(event.keyCode);
+			//send escape key code.... what other key codes are there that need to be sent this way?
+			if (event.keyCode == 27) {
+				event.preventDefault();
+				gotInput(event.keyCode);
+			}
 			return;
 		}
 		if (event.keyCode == 13) {
@@ -194,6 +197,15 @@
 			event.preventDefault();
 		}
 	};
+	
+	document.onkeypress = function ( event ) {
+		if (waitingForKey) {
+			event.preventDefault();
+			gotInput(event.keyCode);
+			return;
+		}
+	}
+	
 	document.onclick = function( event ) {
 		var target = event.target;
 		if (target.tagName == "A")
