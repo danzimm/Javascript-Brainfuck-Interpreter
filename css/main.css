@@ -1,0 +1,65 @@
+@import url(http://fonts.googleapis.com/css?family=Quantico);
+
+input[name=input] {
+	width:600px;
+	height:2em;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	border:5px solid #4D8029;
+	background: #69ad39; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, #69ad39 0%, #63ad39 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#69ad39), color-stop(100%,#63ad39)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, #69ad39 0%,#63ad39 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, #69ad39 0%,#63ad39 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, #69ad39 0%,#63ad39 100%); /* IE10+ */
+	background: radial-gradient(center, ellipse cover, #69ad39 0%,#63ad39 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#69ad39', endColorstr='#63ad39',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	font-size:2em;
+	font-family: 'Quantico';
+	color:#FFF;
+	text-align:center;
+}
+
+input:focus {
+    outline: none;
+}
+
+#input_container {
+	margin:50px auto 50px auto;
+}
+
+body {
+	background: #58962C;
+	font-family: 'Quantico';
+	color:#FFF;
+}
+
+h1 {
+}
+
+#output {
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	background-color:#69ad39;
+	width:100px;
+	border:5px solid #4D8029;
+	margin:50px;
+	display:none;
+}
+
+#process {
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	background-color:#69ad39;
+	width:100px;
+	border:5px solid #4D8029;
+}
+
+#process a {
+	margin:5px;
+	text-decoration:none;
+	color:#FFF;
+}
