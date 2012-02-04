@@ -25,6 +25,12 @@ input:focus {
     outline: none;
 }
 
+#github_button {
+	position: absolute;
+	bottom:1.5em;
+	right:1.5em;
+}
+
 #input_container {
 	margin-top:50px;
 }
