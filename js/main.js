@@ -49,12 +49,25 @@
 		runBrainfuck(tmpBf, tmpPlace+1);
 	};
 	
+	var openBrackets = new Array();
+	var closeBrackets = new Array();
+	
 	var parseBrainfuck = function(bf) {
+		openBrackets = [];
+		closeBrackets = [];
 		for (i = 0; i < bf.length; i++) {
 			if (brainfuckCharacters.indexOf(bf.charAt(i)) == -1) {
 				currentError = "Invalid character at " + (i+1) + ", '" + bf.charAt(i) + "'";
 				return false;
+			} else if (bf.charAt(i) == '[') {
+				openBrackets.push(i);
+			} else if (bf.charAt(i) == ']') {
+				closeBrackets.unshift(i);
 			}
+		}
+		if (openBrackets.length != closeBrackets.length) {
+			currentError = "Open brackets must be closed";
+			return false;
 		}
 		return true;
 	};
@@ -86,7 +99,6 @@
 		}
 	}
 	
-	var currentOpenBracket = -1;
 	
 	var runBrainfuck = function(bf, initial) {
 		for (i = initial; i < bf.length; i++) {
@@ -108,13 +120,11 @@
 					break;
 				case '[':
 					if (registers[pointer] == 0) {
-						place = bf.indexOf(']',place);
-					} else {
-						currentOpenBracket = place;
+						place = closeBrackets[openBrackets.indexOf(place)];
 					}
 					break;
 				case ']':
-					place = currentOpenBracket - 1;
+					place = openBrackets[closeBrackets.indexOf(place)]-1;
 					break;
 				case '+':
 					registers[pointer] = registers[pointer]+1;
